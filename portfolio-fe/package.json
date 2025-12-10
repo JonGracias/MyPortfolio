@@ -9,6 +9,9 @@
     "build": "next build",
     "lint": "eslint"
   },
+  "engines": {
+    "node": "22.21.1"
+  },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
     "geist": "^1.5.1",
