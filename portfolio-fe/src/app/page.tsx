@@ -30,17 +30,16 @@ export const metadata = {
 
 
 export default async function Page() {
-  let repos: Repo[] = [];
-  repos = await fetchRepos();
+/*   let repos: Repo[] = [];
+  repos = await fetchRepos(); */
 
   const raw = headers();                // ReadonlyHeaders (Next.js)
   const h = new Headers(await raw);           // Convert to Headers (Web API)
-
   const ua = userAgent({ headers: h }); // Now valid
   const isMobile = ua.device.type === "mobile" || ua.device.type === "tablet";
 
   return (
-    <ContextProviderTree repos={repos} isMobile={isMobile}>
+    // <ContextProviderTree repos={repos} isMobile={isMobile}>
       <main className="relative flex flex-col min-h-screen overflow-hidden">
         {/* Header / Intro */}
         <section
@@ -71,7 +70,7 @@ export default async function Page() {
 
 
         {/* Repo Grid */}
-        <section
+        {/* <section
           aria-label="Repository List"
           className="
             flex flex-col items-center justify-center w-full h-fit mx-auto
@@ -79,12 +78,12 @@ export default async function Page() {
             mb-5
           "
         >
-          {/* Accessibility + SEO secondary heading */}
+          {/* Accessibility + SEO secondary heading 
           <h2 className="sr-only">Projects</h2>
 
           <RepoList />
         </section>
-
+ */}
 
         {/* Footer */}
         <footer className="w-full h-full min-h- text-center text-sm text-gray-500 mt-5">
@@ -92,6 +91,6 @@ export default async function Page() {
         </footer>
 
       </main>
-    </ContextProviderTree>
+   // </ContextProviderTree>
   );
 }
