@@ -24,7 +24,6 @@ export type Position = {
   width: number;
   scale: number;
 };
-
 export type RepoCardProps = {
   repo: Repo;
   position?: Partial<Position>;
