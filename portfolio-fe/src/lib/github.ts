@@ -6,7 +6,7 @@ export async function fetchRepos() {
   const apiBase = process.env.NEXT_PUBLIC_API_BASE  || "";
   console.log(process.env.NEXT_PUBLIC_API_BASE)
 
-  const res = await fetch(`${apiBase}/api/github/repos`);
+  const res = await fetch('/api/github/repos');
   const data = await res.json();
 
   // ----------------------------------------------------------

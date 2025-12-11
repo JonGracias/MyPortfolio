@@ -81,7 +81,7 @@ export function StarProvider({ children }: { children: ReactNode }) {
     //
     const refreshStars = useCallback(async () => {
         try {
-            const res = await fetch(`${apiBase}/api/github/starred-list`, {
+            const res = await fetch(`/api/github/starred-list`, {
                 cache: "no-store",
                 credentials: "include",
             });
@@ -110,7 +110,7 @@ export function StarProvider({ children }: { children: ReactNode }) {
     useEffect(() => {
         async function checkLogin() {
             try {
-                const res = await fetch(`${apiBase}/api/github/is-logged`, {
+                const res = await fetch(`/api/github/is-logged`, {
                     credentials: "include",
                     cache: "no-store",
                 });
@@ -144,8 +144,8 @@ export function StarProvider({ children }: { children: ReactNode }) {
     // ----------------------------------------------------
     //
     const starRepo = useCallback(async (owner: string, repo: string) => {
-        const starUrl = `${apiBase}/api/github/star`;
-        const loginUrl = `${apiBase}/api/github/login`;
+        const starUrl = `/api/github/star`;
+        const loginUrl = `/api/github/login`;
 
         setIsStarring(true);
 
