@@ -27,7 +27,6 @@ async function isLogged(
     return {
         status: 200,
         headers: {
-            "Access-Control_Allow_Credentials":"true",
             "Content-Type": "application/json",
         },
             body: JSON.stringify({ loggedIn: !!token }),

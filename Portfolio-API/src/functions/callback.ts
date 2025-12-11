@@ -4,7 +4,6 @@ export async function githubCallback(req: HttpRequest, context: InvocationContex
     const clientId = process.env.GITHUB_CLIENT_ID;
     const clientSecret = process.env.GITHUB_CLIENT_SECRET;
     const redirectUri = process.env.GITHUB_REDIRECT_URI;
-    const ORIGIN = process.env.ORIGIN;
 
     const url = new URL(req.url);
     const code = url.searchParams.get("code");
@@ -25,10 +24,6 @@ export async function githubCallback(req: HttpRequest, context: InvocationContex
     const tokenRes = await fetch("https://github.com/login/oauth/access_token", {
         method: "POST",
         headers: {
-            "Access-Control-Allow-Origin": ORIGIN,
-            "Access-Control-Allow-Credentials": "true",
-            "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type",
             Accept: "application/json",
             "Content-Type": "application/json"
         },
