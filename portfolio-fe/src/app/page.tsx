@@ -31,8 +31,7 @@ export const metadata = {
 
 export default async function Page() {
   let repos: Repo[] = [];
-  repos = await fetchRepos(); // existing library function
-
+  repos = await fetchRepos();
 
   const raw = headers();                // ReadonlyHeaders (Next.js)
   const h = new Headers(await raw);           // Convert to Headers (Web API)
